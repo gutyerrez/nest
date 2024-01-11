@@ -1,5 +1,9 @@
 import { uid } from 'uid';
-import { INJECTABLE_WATERMARK, SCOPE_OPTIONS_METADATA } from '../../constants';
+import {
+  INJECTABLE_NAME_METADATA,
+  INJECTABLE_WATERMARK,
+  SCOPE_OPTIONS_METADATA,
+} from '../../constants';
 import { ScopeOptions } from '../../interfaces/scope-options.interface';
 import { Type } from '../../interfaces/type.interface';
 
@@ -40,9 +44,13 @@ export type InjectableOptions = ScopeOptions;
  *
  * @publicApi
  */
-export function Injectable(options?: InjectableOptions): ClassDecorator {
+export function Injectable(
+  name?: string,
+  options?: InjectableOptions,
+): ClassDecorator {
   return (target: object) => {
     Reflect.defineMetadata(INJECTABLE_WATERMARK, true, target);
+    Reflect.defineMetadata(INJECTABLE_NAME_METADATA, name, target);
     Reflect.defineMetadata(SCOPE_OPTIONS_METADATA, options, target);
   };
 }
