@@ -42,6 +42,7 @@ export const RESPONSE_PASSTHROUGH_METADATA = '__responsePassthrough__';
 export const SSE_METADATA = '__sse__';
 export const VERSION_METADATA = '__version__';
 export const INJECTABLE_WATERMARK = '__injectable__';
+export const INJECTABLE_NAME_METADATA = '__name__';
 export const CONTROLLER_WATERMARK = '__controller__';
 export const CATCH_WATERMARK = '__catch__';
 export const ENTRY_PROVIDER_WATERMARK = '__entryProvider__';
